@@ -677,7 +677,9 @@
       if ((_ref1 = this.binder.unbind) != null) {
         _ref1.call(this, this.el);
       }
-      this.observer.unobserve();
+      if (this.observer) {
+        this.observer.unobserve();
+      }
       _ref2 = this.dependencies;
       for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
         observer = _ref2[_i];
