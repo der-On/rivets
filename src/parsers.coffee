@@ -1,24 +1,3 @@
-# Rivets.KeypathParser
-# --------------------
-
-# Parser and tokenizer for keypaths in binding declarations.
-class Rivets.KeypathParser
-  # Parses the keypath and returns a set of adapter interface + path tokens.
-  @parse: (keypath, interfaces, root) ->
-    tokens = []
-    current = {interface: root, path: ''}
-
-    for index in [0...keypath.length] by 1
-      char = keypath.charAt index
-      if char in interfaces
-        tokens.push current
-        current = {interface: char, path: ''}
-      else
-        current.path += char
-
-    tokens.push current
-    tokens
-
 # Rivets.ArgumentParser
 # ---------------------
 
